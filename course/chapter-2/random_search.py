@@ -1,4 +1,4 @@
-import tensorflow as tf
+#import tensorflow as tf
 import numpy as np
 import gym
 import logging
@@ -38,7 +38,7 @@ def random_search():
     
     env = gym.make("CartPole-v0")
 
-    for i in range(100):
+    for i in range(1000):
         env.reset()
         agent = LinearAgent()
         reward = harness.run_episode(env, agent)
