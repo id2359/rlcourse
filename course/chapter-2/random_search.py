@@ -32,5 +32,22 @@ class LinearAgent:
 
 def random_search():
     # implement this!
+    best_params = None
+    best_reward = -1
+    harness = Harness()
+    
+    env = gym.make("CartPole-v0")
+
+    for i in range(100):
+        env.reset()
+        agent = LinearAgent()
+        reward = harness.run_episode(env, agent)
+        if reward > best_reward:
+            best_reward = reward
+            best_params = agent.parameters
+            print("best reward = %s" % best_reward)
+            print("best params = %s" % best_params)
+
+
 
 random_search()
